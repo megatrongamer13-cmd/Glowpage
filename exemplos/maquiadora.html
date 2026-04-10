@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Camila Ferreira - Maquiadora Profissional em Maraba, PA. Especialista em noivas, ensaios e eventos.">
+    <title>Camila Ferreira | Maquiadora Profissional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(170deg, #2A1520 0%, #1A0E14 100%);
+            color: #F5EDE8;
+            min-height: 100vh;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== LAYOUT ===== */
+        .page-wrapper {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 20px;
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.7s ease-out both;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            text-align: center;
+            padding: 48px 0 40px;
+        }
+
+        .hero-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #D4A88C 0%, #B8876E 40%, #C49A82 70%, #E0BCA6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            position: relative;
+            box-shadow:
+                0 0 0 3px rgba(212, 168, 140, 0.3),
+                0 0 40px rgba(212, 168, 140, 0.15),
+                0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-avatar::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(212, 168, 140, 0.25);
+        }
+
+        .hero-avatar-initials {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #1A0E14;
+            letter-spacing: 3px;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.15);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: #D4A88C;
+            margin-bottom: 12px;
+            padding: 6px 16px;
+            border: 1px solid rgba(212, 168, 140, 0.25);
+            border-radius: 20px;
+            background: rgba(212, 168, 140, 0.06);
+        }
+
+        .hero-name {
+            font-size: 36px;
+            font-weight: 600;
+            color: #F5EDE8;
+            line-height: 1.15;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: rgba(245, 237, 232, 0.65);
+            font-weight: 400;
+            margin-bottom: 24px;
+            line-height: 1.5;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Service Tags */
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .hero-tag {
+            font-size: 12px;
+            font-weight: 500;
+            color: #D4A88C;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(212, 168, 140, 0.08);
+            border: 1px solid rgba(212, 168, 140, 0.18);
+            letter-spacing: 0.3px;
+        }
+
+        /* CTA Button */
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25D366 0%, #128C47 100%);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 16px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 4px 20px rgba(37, 211, 102, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 6px 28px rgba(37, 211, 102, 0.4),
+                0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .btn-whatsapp:active {
+            transform: translateY(0);
+        }
+
+        .btn-whatsapp svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* ===== DIVIDER ===== */
+        .section-divider {
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4A88C, transparent);
+            margin: 0 auto;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            padding: 44px 0;
+        }
+
+        .section-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3.5px;
+            text-transform: uppercase;
+            color: #D4A88C;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+            color: #F5EDE8;
+            margin-bottom: 28px;
+            line-height: 1.2;
+        }
+
+        /* ===== GLASS CARD ===== */
+        .glass-card {
+            background: linear-gradient(145deg, rgba(212, 168, 140, 0.07) 0%, rgba(212, 168, 140, 0.02) 100%);
+            border: 1px solid rgba(212, 168, 140, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-card {
+            padding: 32px 24px;
+        }
+
+        .about-card .about-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #D4A88C;
+            margin-bottom: 18px;
+            font-style: italic;
+        }
+
+        .about-card p {
+            font-size: 14px;
+            line-height: 1.75;
+            color: rgba(245, 237, 232, 0.72);
+            margin-bottom: 14px;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .service-card {
+            padding: 22px 24px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: rgba(212, 168, 140, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .service-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+
+        .service-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(212, 168, 140, 0.15), rgba(212, 168, 140, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .service-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #F5EDE8;
+            line-height: 1.3;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: rgba(245, 237, 232, 0.58);
+            line-height: 1.6;
+            padding-left: 56px;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .stat-card {
+            padding: 22px 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(212, 168, 140, 0.2);
+        }
+
+        .stat-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #D4A88C;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            color: rgba(245, 237, 232, 0.55);
+            letter-spacing: 0.3px;
+            line-height: 1.4;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .testimonial-card {
+            padding: 24px;
+        }
+
+        .testimonial-stars {
+            color: #D4A88C;
+            font-size: 14px;
+            letter-spacing: 3px;
+            margin-bottom: 14px;
+        }
+
+        .testimonial-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            font-style: italic;
+            color: rgba(245, 237, 232, 0.82);
+            line-height: 1.65;
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 16px;
+            border-left: 2px solid rgba(212, 168, 140, 0.25);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212, 168, 140, 0.2), rgba(212, 168, 140, 0.08));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #D4A88C;
+            flex-shrink: 0;
+        }
+
+        .testimonial-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-name {
+            font-size: 13px;
+            font-weight: 600;
+            color: #F5EDE8;
+        }
+
+        .testimonial-service {
+            font-size: 11px;
+            color: rgba(245, 237, 232, 0.45);
+            letter-spacing: 0.2px;
+        }
+
+        /* ===== CTA SECTION ===== */
+        .cta-section {
+            text-align: center;
+            padding: 48px 0;
+        }
+
+        .cta-section .section-title {
+            margin-bottom: 10px;
+        }
+
+        .cta-subtitle {
+            font-size: 14px;
+            color: rgba(245, 237, 232, 0.55);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .btn-whatsapp-lg {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #25D366 0%, #128C47 100%);
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 18px 40px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 4px 24px rgba(37, 211, 102, 0.3),
+                0 2px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 340px;
+            animation: pulse-soft 3s ease-in-out infinite;
+        }
+
+        .btn-whatsapp-lg:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 32px rgba(37, 211, 102, 0.45),
+                0 4px 12px rgba(0, 0, 0, 0.25);
+            animation: none;
+        }
+
+        .btn-whatsapp-lg svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 32px 0 48px;
+            border-top: 1px solid rgba(212, 168, 140, 0.08);
+        }
+
+        .footer-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: #D4A88C;
+            margin-bottom: 16px;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .footer-social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(212, 168, 140, 0.08);
+            border: 1px solid rgba(212, 168, 140, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social-link:hover {
+            background: rgba(212, 168, 140, 0.15);
+            border-color: rgba(212, 168, 140, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .footer-social-link svg {
+            width: 20px;
+            height: 20px;
+            fill: #D4A88C;
+        }
+
+        .footer-city {
+            font-size: 12px;
+            color: rgba(245, 237, 232, 0.35);
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand {
+            font-size: 10px;
+            color: rgba(245, 237, 232, 0.2);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .footer-brand a {
+            color: rgba(212, 168, 140, 0.4);
+            transition: color 0.3s ease;
+        }
+
+        .footer-brand a:hover {
+            color: #D4A88C;
+        }
+
+        /* ===== BACKGROUND ORNAMENTS ===== */
+        .bg-glow {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-glow-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(212, 168, 140, 0.06) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+
+        .bg-glow-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212, 168, 140, 0.04) 0%, transparent 70%);
+            bottom: 20%;
+            left: -200px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 480px) {
+            .page-wrapper {
+                padding: 0 32px;
+            }
+
+            .hero-name {
+                font-size: 40px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .hero-name {
+                font-size: 30px;
+            }
+
+            .stats-grid {
+                gap: 8px;
+            }
+
+            .stat-card {
+                padding: 18px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Glows -->
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <div class="page-wrapper">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero">
+            <div class="hero-avatar animate-in delay-1">
+                <span class="hero-avatar-initials">CF</span>
+            </div>
+
+            <div class="hero-badge animate-in delay-2">Maquiadora Profissional</div>
+
+            <h1 class="hero-name animate-in delay-2">Camila Ferreira</h1>
+
+            <p class="hero-tagline animate-in delay-3">Realçando sua beleza com arte e sofisticação</p>
+
+            <div class="hero-tags animate-in delay-4">
+                <span class="hero-tag">Noivas</span>
+                <span class="hero-tag">Ensaios</span>
+                <span class="hero-tag">Eventos</span>
+                <span class="hero-tag">Sobrancelha</span>
+            </div>
+
+            <div class="animate-in delay-5">
+                <a href="https://wa.me/5594992130827?text=Ol%C3%A1%20Camila!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Agendar Agora
+                </a>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ==================== ABOUT ==================== -->
+        <section class="section">
+            <p class="section-label animate-in">Sobre mim</p>
+            <h2 class="section-title animate-in">Arte com propósito</h2>
+
+            <div class="glass-card about-card animate-in">
+                <h3 class="about-heading">"Cada rosto conta uma história"</h3>
+                <p>
+                    Sou Camila Ferreira, maquiadora profissional atuando em Marabá e região. Há mais de 6 anos, dedico minha carreira a transformar a autoestima das minhas clientes através da arte da maquiagem, sempre respeitando a individualidade e a beleza natural de cada uma.
+                </p>
+                <p>
+                    Especializada em maquiagem para noivas e eventos, busco constantemente me atualizar com as principais tendências nacionais e internacionais. Cada trabalho é pensado para valorizar seus traços únicos, garantindo um resultado sofisticado e duradouro para o seu grande dia.
+                </p>
+                <p>
+                    Meu compromisso vai além da técnica: é criar uma experiência de cuidado e acolhimento. Do primeiro contato ao momento da produção, você terá a segurança de estar nas mãos de uma profissional que ama o que faz e que vai dar o seu melhor para que você se sinta a versão mais linda de si mesma.
+                </p>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ==================== SERVICES ==================== -->
+        <section class="section">
+            <p class="section-label animate-in">Especialidades</p>
+            <h2 class="section-title animate-in">Meus serviços</h2>
+
+            <div class="services-grid">
+                <div class="glass-card service-card animate-in delay-1">
+                    <div class="service-card-header">
+                        <div class="service-icon">&#128141;</div>
+                        <h3>Maquiagem para Noivas</h3>
+                    </div>
+                    <p>Produção completa para o dia mais especial da sua vida. Teste incluso, produtos de alta fixação e acabamento impecável que dura até o final da festa.</p>
+                </div>
+
+                <div class="glass-card service-card animate-in delay-2">
+                    <div class="service-card-header">
+                        <div class="service-icon">&#128248;</div>
+                        <h3>Ensaios Fotográficos</h3>
+                    </div>
+                    <p>Maquiagem pensada para câmera, com técnicas que garantem resultado perfeito em fotos e vídeos. Ideal para books, gestantes e ensaios temáticos.</p>
+                </div>
+
+                <div class="glass-card service-card animate-in delay-3">
+                    <div class="service-card-header">
+                        <div class="service-icon">&#10024;</div>
+                        <h3>Maquiagem Social</h3>
+                    </div>
+                    <p>Para formaturas, festas de 15 anos, madrinhas e convidadas. Looks personalizados do natural ao glam, sempre alinhados com seu estilo e o evento.</p>
+                </div>
+
+                <div class="glass-card service-card animate-in delay-4">
+                    <div class="service-card-header">
+                        <div class="service-icon">&#9999;&#65039;</div>
+                        <h3>Design de Sobrancelha</h3>
+                    </div>
+                    <p>Sobrancelhas que emolduram o olhar. Técnicas de design personalizado que harmonizam com o formato do rosto, realçando a expressão natural.</p>
+                </div>
+
+                <div class="glass-card service-card animate-in delay-5">
+                    <div class="service-card-header">
+                        <div class="service-icon">&#128135;&#8205;&#9792;&#65039;</div>
+                        <h3>Penteados</h3>
+                    </div>
+                    <p>Penteados elegantes e modernos que complementam sua maquiagem. De coques clássicos a ondas soltas, cada estilo pensado para a ocasião perfeita.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ==================== STATS ==================== -->
+        <section class="section">
+            <div class="stats-grid">
+                <div class="glass-card stat-card animate-in delay-1">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Dedicação em cada produção</div>
+                </div>
+                <div class="glass-card stat-card animate-in delay-2">
+                    <div class="stat-value">5 &#9733;</div>
+                    <div class="stat-label">Avaliação das clientes</div>
+                </div>
+                <div class="glass-card stat-card animate-in delay-3">
+                    <div class="stat-value">Noivas</div>
+                    <div class="stat-label">e eventos especiais</div>
+                </div>
+                <div class="glass-card stat-card animate-in delay-4">
+                    <div class="stat-value">Marabá</div>
+                    <div class="stat-label">e toda a região</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ==================== TESTIMONIALS ==================== -->
+        <section class="section">
+            <p class="section-label animate-in">Depoimentos</p>
+            <h2 class="section-title animate-in">O que minhas clientes dizem</h2>
+
+            <div class="testimonials-list">
+                <div class="glass-card testimonial-card animate-in delay-1">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">
+                        "A Camila é simplesmente incrível! No dia do meu casamento eu me senti a mulher mais bonita do mundo. A maquiagem durou a festa inteira e eu recebi elogios a noite toda. Super recomendo!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RL</div>
+                        <div class="testimonial-author-info">
+                            <span class="testimonial-name">Rafaela Lima</span>
+                            <span class="testimonial-service">Maquiagem para Noiva</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card animate-in delay-2">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">
+                        "Fiz meu ensaio de gestante com a Camila e as fotos ficaram maravilhosas. Ela soube exatamente o que eu queria, uma make natural mas com aquele glow especial. Amei o resultado!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AS</div>
+                        <div class="testimonial-author-info">
+                            <span class="testimonial-name">Amanda Souza</span>
+                            <span class="testimonial-service">Ensaio Fotográfico</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card animate-in delay-3">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">
+                        "Profissional de verdade! Fui madrinha em um casamento e a Camila fez um trabalho impecável. Além de talentosa, é super atenciosa e pontual. Já virou minha maquiadora oficial!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JO</div>
+                        <div class="testimonial-author-info">
+                            <span class="testimonial-name">Juliana Oliveira</span>
+                            <span class="testimonial-service">Maquiagem Social</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ==================== CTA ==================== -->
+        <section class="cta-section">
+            <p class="section-label animate-in">Vamos conversar</p>
+            <h2 class="section-title animate-in">Agende seu horário agora</h2>
+            <p class="cta-subtitle animate-in">Entre em contato e garanta sua data. Atendimento personalizado para deixar você ainda mais linda.</p>
+
+            <div class="animate-in delay-2">
+                <a href="https://wa.me/5594992130827?text=Ol%C3%A1%20Camila!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="btn-whatsapp-lg" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Chamar no WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== FOOTER ==================== -->
+        <footer class="footer">
+            <div class="footer-name">Camila Ferreira</div>
+
+            <div class="footer-socials">
+                <a href="https://instagram.com/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://wa.me/5594992130827" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+            </div>
+
+            <p class="footer-city">Marabá, PA</p>
+
+            <p class="footer-brand">Feito com <a href="#">GlowPage</a></p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

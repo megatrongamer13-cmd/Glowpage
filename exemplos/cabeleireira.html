@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raquel Mendes | Hair Designer</title>
+<meta name="description" content="Raquel Mendes - Hair Designer em Parauapebas, PA. Especialista em cortes, coloracao, mechas e tratamentos capilares.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --bg-deep: #0D0B0E;
+    --bg-mid: #1A1520;
+    --bg-card: #1E1927;
+    --gold: #C9A04E;
+    --gold-light: #D4B56A;
+    --gold-dim: rgba(201, 160, 78, 0.15);
+    --purple: #9C6FA8;
+    --purple-dim: rgba(156, 111, 168, 0.12);
+    --cream: #F5F0E8;
+    --white: #FFFFFF;
+    --text-muted: #A9A0B4;
+    --text-body: #D6D0DE;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow-glow: 0 0 20px rgba(201, 160, 78, 0.08);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 50%, var(--bg-deep) 100%);
+    color: var(--text-body);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page-wrapper {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Ambient background decoration */
+  .page-wrapper::before {
+    content: '';
+    position: fixed;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(201, 160, 78, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page-wrapper::after {
+    content: '';
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(156, 111, 168, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--cream);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* ========== HERO ========== */
+  .hero {
+    text-align: center;
+    padding: 48px 0 40px;
+  }
+
+  .hero-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--purple) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    position: relative;
+    box-shadow: 0 0 40px rgba(201, 160, 78, 0.2), 0 0 80px rgba(156, 111, 168, 0.1);
+  }
+
+  .hero-avatar::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--purple), var(--gold));
+    z-index: -1;
+    animation: rotateGlow 6s linear infinite;
+  }
+
+  @keyframes rotateGlow {
+    0% { filter: hue-rotate(0deg); }
+    50% { filter: hue-rotate(15deg); }
+    100% { filter: hue-rotate(0deg); }
+  }
+
+  .hero-avatar-inner {
+    width: 114px;
+    height: 114px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #2A1F35 0%, #1A1222 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--gold) 20%, var(--gold-light) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 3px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-dim);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(201, 160, 78, 0.2);
+    margin-bottom: 16px;
+  }
+
+  .hero-name {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .hero-tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--purple);
+    margin-bottom: 24px;
+    font-weight: 400;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+
+  .hero-tag {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .hero-tag:hover {
+    border-color: rgba(201, 160, 78, 0.3);
+    color: var(--gold-light);
+    background: var(--gold-dim);
+  }
+
+  /* Buttons */
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #25D366 0%, #128C46 100%);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+    letter-spacing: 0.3px;
+  }
+
+  .btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.35);
+  }
+
+  .btn-whatsapp:active {
+    transform: translateY(0);
+  }
+
+  .btn-whatsapp svg {
+    flex-shrink: 0;
+  }
+
+  /* ========== DIVIDER ========== */
+  .section-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto;
+  }
+
+  /* ========== ABOUT ========== */
+  .about {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .about-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .about-highlight {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  /* ========== SERVICES ========== */
+  .services {
+    padding: 40px 0;
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(201, 160, 78, 0.08);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(201, 160, 78, 0.15), transparent 50%, rgba(156, 111, 168, 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover::before {
+    opacity: 1;
+  }
+
+  .service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow), var(--shadow-card);
+    border-color: rgba(201, 160, 78, 0.15);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .service-icon.gold-bg {
+    background: var(--gold-dim);
+  }
+
+  .service-icon.purple-bg {
+    background: var(--purple-dim);
+  }
+
+  .service-info {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 3px;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+
+  .service-arrow {
+    color: rgba(201, 160, 78, 0.3);
+    font-size: 18px;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+  }
+
+  .service-card:hover .service-arrow {
+    color: var(--gold);
+  }
+
+  /* ========== STATS ========== */
+  .stats {
+    padding: 40px 0;
+  }
+
+  .stats-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    padding: 24px 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--purple));
+    border-radius: 0 0 2px 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .stat-card:hover::after {
+    opacity: 1;
+  }
+
+  .stat-card:hover {
+    border-color: rgba(201, 160, 78, 0.12);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 6px;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  /* ========== TESTIMONIALS ========== */
+  .testimonials {
+    padding: 40px 0;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    margin-bottom: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    border-color: rgba(156, 111, 168, 0.2);
+    box-shadow: 0 0 20px rgba(156, 111, 168, 0.06);
+  }
+
+  .testimonial-quote {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    color: rgba(201, 160, 78, 0.1);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testimonial-stars {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    color: var(--gold);
+  }
+
+  .testimonial-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-body);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cream);
+    flex-shrink: 0;
+  }
+
+  .testimonial-avatar.av-1 {
+    background: linear-gradient(135deg, var(--gold), #A07830);
+  }
+
+  .testimonial-avatar.av-2 {
+    background: linear-gradient(135deg, var(--purple), #7B4E88);
+  }
+
+  .testimonial-avatar.av-3 {
+    background: linear-gradient(135deg, #6FA89C, #4E886B);
+  }
+
+  .testimonial-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  .testimonial-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 1px;
+  }
+
+  /* ========== CTA ========== */
+  .cta {
+    padding: 48px 0;
+    text-align: center;
+  }
+
+  .cta-box {
+    background: linear-gradient(145deg, rgba(201, 160, 78, 0.08) 0%, rgba(156, 111, 168, 0.06) 100%);
+    border: 1px solid rgba(201, 160, 78, 0.12);
+    border-radius: 20px;
+    padding: 36px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .cta-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .cta-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .cta-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+
+  .cta .btn-whatsapp {
+    max-width: 280px;
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    padding: 32px 0 40px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .footer-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--text-muted);
+  }
+
+  .footer-social-link:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: var(--gold-dim);
+    transform: translateY(-2px);
+  }
+
+  .footer-social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-location {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .footer-powered {
+    font-size: 11px;
+    color: rgba(169, 160, 180, 0.4);
+    letter-spacing: 0.5px;
+  }
+
+  .footer-powered span {
+    background: linear-gradient(135deg, var(--gold), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+  }
+
+  /* ========== ANIMATIONS ========== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero { animation: fadeInUp 0.8s ease-out; }
+  .about { animation: fadeInUp 0.8s ease-out 0.1s both; }
+  .services { animation: fadeInUp 0.8s ease-out 0.2s both; }
+  .stats { animation: fadeInUp 0.8s ease-out 0.3s both; }
+  .testimonials { animation: fadeInUp 0.8s ease-out 0.4s both; }
+  .cta { animation: fadeInUp 0.8s ease-out 0.5s both; }
+  .footer { animation: fadeInUp 0.8s ease-out 0.6s both; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 360px) {
+    .hero-name {
+      font-size: 28px;
+    }
+    .section-title {
+      font-size: 21px;
+    }
+    .stat-value {
+      font-size: 20px;
+    }
+    .page-wrapper {
+      padding: 0 16px;
+    }
+  }
+
+  @media (min-width: 481px) {
+    .page-wrapper {
+      padding: 0 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-avatar">
+      <div class="hero-avatar-inner">
+        <span class="hero-initials">RM</span>
+      </div>
+    </div>
+
+    <div class="hero-badge">Hair Designer</div>
+
+    <h1 class="hero-name">Raquel Mendes</h1>
+
+    <p class="hero-tagline">Seu cabelo é sua coroa</p>
+
+    <div class="hero-tags">
+      <span class="hero-tag">Cortes</span>
+      <span class="hero-tag">Coloração</span>
+      <span class="hero-tag">Tratamentos</span>
+      <span class="hero-tag">Penteados</span>
+      <span class="hero-tag">Mechas</span>
+    </div>
+
+    <a href="https://wa.me/5594992130827?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio!" class="btn-whatsapp" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar pelo WhatsApp
+    </a>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about">
+    <p class="section-label">Sobre mim</p>
+    <h2 class="section-title">Paixão por transformar</h2>
+    <p class="about-text">
+      Sou a <span class="about-highlight">Raquel Mendes</span>, hair designer
+      apaixonada pela arte de transformar vidas através dos cabelos. Com mais de
+      8 anos de experiência, sou especialista em <span class="about-highlight">coloração,
+      mechas e cortes personalizados</span>. Cada cliente é única, e meu trabalho
+      é revelar a melhor versão de você. Atendo em Parauapebas e região com
+      dedicação, carinho e produtos de alta qualidade.
+    </p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== SERVICES ==================== -->
+  <section class="services">
+    <div class="services-header">
+      <p class="section-label">Serviços</p>
+      <h2 class="section-title">O que eu faço</h2>
+    </div>
+
+    <a href="https://wa.me/5594992130827?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20corte%20feminino!" class="service-card" target="_blank" rel="noopener">
+      <div class="service-icon gold-bg">&#9986;</div>
+      <div class="service-info">
+        <div class="service-name">Corte Feminino</div>
+        <div class="service-desc">Cortes modernos e personalizados para cada tipo de rosto e estilo</div>
+      </div>
+      <span class="service-arrow">&#8250;</span>
+    </a>
+
+    <a href="https://wa.me/5594992130827?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20colora%C3%A7%C3%A3o%20e%20mechas!" class="service-card" target="_blank" rel="noopener">
+      <div class="service-icon purple-bg">&#127912;</div>
+      <div class="service-info">
+        <div class="service-name">Coloração e Mechas</div>
+        <div class="service-desc">Técnicas exclusivas de mechas, balayage, luzes e coloração completa</div>
+      </div>
+      <span class="service-arrow">&#8250;</span>
+    </a>
+
+    <a href="https://wa.me/5594992130827?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20tratamentos%20capilares!" class="service-card" target="_blank" rel="noopener">
+      <div class="service-icon gold-bg">&#10024;</div>
+      <div class="service-info">
+        <div class="service-name">Tratamentos Capilares</div>
+        <div class="service-desc">Hidratação profunda, reconstrução e cauterização para fios saudáveis</div>
+      </div>
+      <span class="service-arrow">&#8250;</span>
+    </a>
+
+    <a href="https://wa.me/5594992130827?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20penteados!" class="service-card" target="_blank" rel="noopener">
+      <div class="service-icon purple-bg">&#128142;</div>
+      <div class="service-info">
+        <div class="service-name">Penteados para Eventos</div>
+        <div class="service-desc">Penteados elegantes para casamentos, formaturas e ocasiões especiais</div>
+      </div>
+      <span class="service-arrow">&#8250;</span>
+    </a>
+
+    <a href="https://wa.me/5594992130827?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20escova%20e%20progressiva!" class="service-card" target="_blank" rel="noopener">
+      <div class="service-icon gold-bg">&#128131;</div>
+      <div class="service-info">
+        <div class="service-name">Escova e Progressiva</div>
+        <div class="service-desc">Escova modeladora, progressiva e alisamentos com produtos premium</div>
+      </div>
+      <span class="service-arrow">&#8250;</span>
+    </a>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== STATS ==================== -->
+  <section class="stats">
+    <div class="stats-header">
+      <p class="section-label">Números</p>
+      <h2 class="section-title">Por que me escolher</h2>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">8+</div>
+        <div class="stat-label">Anos de experiência</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">5&#9733;</div>
+        <div class="stat-label">Avaliação dos clientes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">&#9986;</div>
+        <div class="stat-label">Cortes e coloração</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">&#128205;</div>
+        <div class="stat-label">Parauapebas e região</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials">
+    <div class="testimonials-header">
+      <p class="section-label">Depoimentos</p>
+      <h2 class="section-title">O que dizem de mim</h2>
+    </div>
+
+    <div class="testimonial-card">
+      <span class="testimonial-quote">"</span>
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">
+        A Raquel é incrível! Fiz mechas e corte com ela e saí me sentindo outra
+        pessoa. Muito atenciosa, entendeu exatamente o que eu queria e o resultado
+        ficou perfeito. Super recomendo!
+      </p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar av-1">AM</div>
+        <div>
+          <div class="testimonial-name">Amanda Martins</div>
+          <div class="testimonial-meta">Cliente há 3 anos</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <span class="testimonial-quote">"</span>
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">
+        Procurei a Raquel para fazer meu cabelo pro casamento e ela simplesmente
+        arrasou. O penteado ficou lindo, durou a noite toda e recebi muitos elogios.
+        Profissional de verdade, com muito bom gosto.
+      </p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar av-2">CS</div>
+        <div>
+          <div class="testimonial-name">Camila Souza</div>
+          <div class="testimonial-meta">Noiva atendida em 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <span class="testimonial-quote">"</span>
+      <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">
+        Meu cabelo estava muito danificado e a Raquel fez um tratamento de
+        reconstrução que salvou meus fios. Além de competente, ela é super
+        carinhosa e te deixa muito à vontade. Melhor profissional de Parauapebas!
+      </p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar av-3">FL</div>
+        <div>
+          <div class="testimonial-name">Fernanda Lima</div>
+          <div class="testimonial-meta">Cliente desde 2023</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ==================== CTA ==================== -->
+  <section class="cta">
+    <div class="cta-box">
+      <span class="cta-icon">&#128135;&#8205;&#9792;&#65039;</span>
+      <h2 class="cta-title">Transforme seu visual</h2>
+      <p class="cta-subtitle">
+        Agende seu horário e descubra o poder de um cabelo que reflete quem você realmente é.
+      </p>
+      <a href="https://wa.me/5594992130827?text=Ol%C3%A1%20Raquel%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio!" class="btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar com a Raquel
+      </a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-name">Raquel Mendes</div>
+
+    <div class="footer-socials">
+      <!-- Instagram -->
+      <a href="#" class="footer-social-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5594992130827" class="footer-social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <!-- TikTok -->
+      <a href="#" class="footer-social-link" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.71a8.21 8.21 0 004.76 1.52v-3.4a4.85 4.85 0 01-1-.14z"/></svg>
+      </a>
+    </div>
+
+    <div class="footer-location">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Parauapebas, PA
+    </div>
+
+    <div class="footer-powered">Feito com <span>GlowPage</span></div>
+  </footer>
+
+</div>
+
+</body>
+</html>
